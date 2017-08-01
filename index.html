@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="utf-8" />
+      <title></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+      <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  	  <script src="lib/capture.js"></script>
+  <!-- <script src="https://open.ys7.com/sdk/js/1.1/ezuikit.js"></script> -->
+      <style media="screen">
+        body{
+          margin:0;
+          background-color: rgb(59, 59, 59);
+        }
+        .block{
+          position: relative;
+        }
+        .video{
+          position: relative;
+        }
+        #output{
+          height:400px;
+          overflow: auto;
+        }
+      </style>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <div class="ui segment" style="margin-top:40px">
+        <div class="ui grid">
+          <div class="ten wide column">
+            <div class="ui segment">
+              <div class="video-box">
+                <video id="video"  autoplay style="width:100%" controls playsInline webkit-playsinline>
+                </video>
+                <!-- <img src="img7.jpg" alt="" style="width:100%" id="test"> -->
+              </div>
+              <!-- <video id="video" autoplay></video>
+              <button type="button" class="ui red button" id="bt-1">捕捉画面</button>-->
+            </div>
+          </div>
+          <div class="six wide column">
+            <div class="ui segment">
+              <button type="button" class="ui blue button" id="bt-2">Process</button>
+              <div class="ui segment" id="output">
+                <div class="ui image">
+
+                </div>
+                <ul></ul>
+                <!-- <div class='block'></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <img id="example" src="images/faces1.jpg" alt="" style="position:relative"> -->
+    <!-- <button type="button" name="button">Click ME</button> -->
+      <!-- <video id="video" width="640" height="480" autoplay></video>
+      <button type="button" name="button">Click Me!</button>-->
+  </body>
+  <script type="text/javascript">
+    // $("#video").webCam();
+    $("#video").capture({"output":"#output .ui.image","density":1000,"colorWeight":1.86,"K":7})
+    // $("img").capture({"output":"#output .ui.image","colorWeight":2.18,"K":7})
+  </script>
+
+</html>
